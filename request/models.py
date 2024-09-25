@@ -79,7 +79,7 @@ class Request(models.Model):
         if hasattr(request, "user") and hasattr(request.user, "is_authenticated"):
             is_authenticated = request.user.is_authenticated
             if is_authenticated:
-                self.user = request.user
+                self.user_id = request.user.id
 
         if response:
             self.response = response.status_code
